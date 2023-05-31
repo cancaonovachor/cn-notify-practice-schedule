@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  ca:
+    container_name: ca
+    build:
+      context: .
+      dockerfile: ./Dockerfile_local
+    ports:
+      - 3000:3000
+    tty: true
+    volumes:
+      - ./:/app
