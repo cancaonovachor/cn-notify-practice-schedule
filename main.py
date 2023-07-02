@@ -116,5 +116,5 @@ def post_to_twitter(tweet):
     except tweepy.TweepError as e:
         print("投稿に失敗しました:", e.reason)
 
-# # Twitterに投稿
-# post_to_twitter(tweet_text)
+# Twitterに投稿
+post_to_twitter(tweet_text)
