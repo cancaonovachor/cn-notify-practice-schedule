@@ -1,3 +1,4 @@
+import os
 import datetime
 import re
 import googleapiclient.discovery
@@ -5,11 +6,7 @@ import google.auth
 import tweepy
 import unicodedata
 
-# Twitter APIキーとトークン
-API_KEY = "bWuWKrqOaTFL0Ne5OxCELZvg3"
-API_SECRET = "6MHTfNxIRPmo50VMVU31nHm14592bgeJurp699y80IPmL2DUth"
-ACCESS_TOKEN = "776029124288655360-4pGlehtBJmdfoU1Of5jOKRyX3SSM9oM"
-ACCESS_TOKEN_SECRET = "bU5XYc75jvpFGmS6Gtc7cxsOowMRgxDtnrLLfqwtcopt0"
+from local_settings import *
 
 # Google APIの準備をする
 SCOPES = ["https://www.googleapis.com/auth/calendar"]

@@ -21,5 +21,7 @@ COPY . .
 RUN chmod -R +x ./
 ENV PYTHONPATH app
 
+RUN ls -al
+
 # Run script.py when the container launches
 CMD ["poetry", "run", "python", "main.py", "--server.port", "8080"]

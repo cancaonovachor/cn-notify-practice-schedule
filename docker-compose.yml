@@ -1,11 +1,11 @@
 version: "3"
 
 services:
-  ca:
-    container_name: ca
+  practice-notify:
+    container_name: practice-notify
     build:
       context: .
-      dockerfile: ./Dockerfile_local
+      dockerfile: ./Dockerfile
     ports:
       - 3000:3000
     tty: true
