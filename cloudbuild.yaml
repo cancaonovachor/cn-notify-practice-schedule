@@ -1,0 +1,19 @@
+steps:
+  - id: "build"
+    name: python:3.11
+    entrypoint: bash
+    args:
+      [
+        "-c",
+        "python -m pip install poetry && poetry install --no-interaction --no-ansi --no-root",
+      ]
+
+  - id: "push"
+    name: "gcr.io/kaniko-project/executor:latest"
+    args:
+      [
+        "--destination=asia-northeast1-docker.pkg.dev/starlit-road-203901/cn-notify-practice-schedule/stg/image:$SHORT_SHA",
+        "--cache=true",
+        "--cache-ttl=6h",
+      ]
+    waitFor: ["-"]

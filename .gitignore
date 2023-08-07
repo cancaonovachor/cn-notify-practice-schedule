@@ -1,2 +1,4 @@
 sa-key.json
 local_settings.py
+
+*__pycache__
