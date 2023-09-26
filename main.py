@@ -5,8 +5,14 @@ import googleapiclient.discovery
 import google.auth
 import tweepy
 import unicodedata
+from dotenv import load_dotenv
 
-from local_settings import *
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+ACCESS_TOKEN_SECRET = os.getenv("ACCESS_TOKEN_SECRET")
 
 # Google APIの準備をする
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
@@ -123,7 +129,7 @@ def get_events_in_month(year, month):
 # 指定された月のイベントを取得して表示する
 dt = datetime.datetime.now()
 year = dt.year
-month = dt.month + 1
+month = dt.month
 list_rehearsal = get_events_in_month(year, month)
 
 tweet_text = f"こんにちは!CancaoNovaです!\n{month}月の練習日程は\n\n{list_rehearsal}\n\nとなっております!"
@@ -145,4 +151,4 @@ def post_to_twitter(tweet):
 
 
 # # Twitterに投稿
-# post_to_twitter(tweet_text)
+post_to_twitter(tweet_text)

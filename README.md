@@ -2,6 +2,11 @@
 
 練習予定を Nova カレンダーから取得して、自動で Twitter に投稿する
 
+## 環境変数
+
+python-dotenv を使用  
+.env.sample を.env にリネームして利用する
+
 ## デプロイ
 
 ```
