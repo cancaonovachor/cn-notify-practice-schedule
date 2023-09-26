@@ -13,7 +13,7 @@ COPY poetry.lock ./
 
 RUN pip install poetry
 RUN poetry config virtualenvs.in-project true
-RUN poetry install
+RUN poetry install --no-dev && rm -rf ~/.cache
 
 # RUN poetry install --without dev
 
@@ -21,5 +21,7 @@ COPY . .
 RUN chmod -R +x ./
 ENV PYTHONPATH app
 
+RUN ls -al
+
 # Run script.py when the container launches
-# CMD ["poetry", "run", "python", "main.py", "--server.port", "8080"]
+CMD ["poetry", "run", "python", "main.py", "--server.port", "8080"]
